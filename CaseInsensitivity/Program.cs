@@ -1,12 +1,22 @@
-﻿using System;
+﻿using System.Collections.Generic;
+using System.IO;
+using System.Reflection;
+using System.Text;
 
-namespace CaseInsensitivity
+namespace TechJobsConsole
 {
-    class Program
+    public static class Extensions
+
     {
-        static void Main(string[] args)
+        public static bool CaseInsensitiveContains(this string text, string value, System.StringComparison stringComparison = System.StringComparison.CurrentCultureIgnoreCase)
+
         {
-            Console.WriteLine("Hello World!");
+            return text.IndexOf(value, stringComparison) >= 0;
         }
+
     }
 }
+
+//To call method:
+//if (Extensions.CaseInsensitiveContains(stringsearchingin, stringsearchingfor) == true)
+//{enact this code}
